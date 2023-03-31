@@ -1,3 +1,9 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[1]:
+
+
 '''Module 4: Individual Programming Assignment 1
 
 Parsing Data
@@ -5,44 +11,10 @@ Parsing Data
 This assignment covers your ability to manipulate data in Python.
 '''
 
-def relationship_status(from_member, to_member, social_graph):
-    '''Relationship Status.
-    15 points.
 
-    Let us pretend that you are building a new app.
-    Your app supports social media functionality, which means that users can have
-    relationships with other users.
+# In[4]:
 
-    There are two guidelines for describing relationships on this social media app:
-    1. Any user can follow any other user.
-    2. If two users follow each other, they are considered friends.
 
-    This function describes the relationship that two users have with each other.
-
-    Please see "assignment-4-sample-data.py" for sample data. The social graph
-    will adhere to the same pattern.
-
-    Parameters
-    ----------
-    from_member: str
-        the subject member
-    to_member: str
-        the object member
-    social_graph: dict
-        the relationship data    
-
-    Returns
-    -------
-    str
-        "follower" if fromMember follows toMember,
-        "followed by" if fromMember is followed by toMember,
-        "friends" if fromMember and toMember follow each other,
-        "no relationship" if neither fromMember nor toMember follow each other.
-    '''
-    # Replace `pass` with your code. 
-    # Stay within the function. Only use the parameters as input. The function should return your answer.
-
-#SAMPLE DATA
 social_graph = {
     "@bongolpoc":{"first_name":"Joselito",
                   "last_name":"Olpoc",
@@ -81,11 +53,50 @@ social_graph = {
     },
 }
 
-# CODE CELL
+
+# In[9]:
+
+
+def relationship_status(from_member, to_member, social_graph):
+    '''Relationship Status.
+    15 points.
+
+    Let us pretend that you are building a new app.
+    Your app supports social media functionality, which means that users can have
+    relationships with other users.
+
+    There are two guidelines for describing relationships on this social media app:
+    1. Any user can follow any other user.
+    2. If two users follow each other, they are considered friends.
+
+    This function describes the relationship that two users have with each other.
+
+    Please see "assignment-4-sample-data.py" for sample data. The social graph
+    will adhere to the same pattern.
+
+    Parameters
+    ----------
+    from_member: str
+        the subject member
+    to_member: str
+        the object member
+    social_graph: dict
+        the relationship data    
+
+    Returns
+    -------
+    str
+        "follower" if fromMember follows toMember,
+        "followed by" if fromMember is followed by toMember,
+        "friends" if fromMember and toMember follow each other,
+        "no relationship" if neither fromMember nor toMember follow each other.
+    '''
+    # Replace `pass` with your code. 
+    # Stay within the function. Only use the parameters as input. The function should return your answer.
+
 #from_member = string // to_member = string // social_graph = dictionary
 
 #for testing purposes: "@chums", "@joeilagan" should be friends // "@bongolpoc", "@chums" should be followed by
-def relationship_status (from_member, to_member, social_graph):
     #follower (if from_member follows to_member)
     if to_member in social_graph[from_member]["following"] and from_member not in social_graph[to_member]["following"] :
         return ("follower")
@@ -99,37 +110,11 @@ def relationship_status (from_member, to_member, social_graph):
     else:
         return None
     
-relationship_status ("@eeebeee", "@chums", social_graph)
+relationship_status ("@jobenilagan", "@chums", social_graph)
 
 
+# In[11]:
 
-
-def tic_tac_toe(board):
-    '''Tic Tac Toe. 
-    15 points.
-
-    Tic Tac Toe is a common paper-and-pencil game. 
-    Players must attempt to successfully draw a straight line of their symbol across a grid.
-    The player that does this first is considered the winner.
-
-    This function evaluates a tic tac toe board and returns the winner.
-
-    Please see "assignment-4-sample-data.py" for sample data. The board will adhere
-    to the same pattern. The board may by 3x3, 4x4, 5x5, or 6x6. The board will never
-    have more than one winner. The board will only ever have 2 unique symbols at the same time.
-
-    Parameters
-    ----------
-    board: list
-        the representation of the tic-tac-toe board as a square list of lists
-
-    Returns
-    -------
-    str
-        the symbol of the winner or "NO WINNER" if there is no winner
-    '''
-    # Replace `pass` with your code. 
-    # Stay within the function. Only use the parameters as input. The function should return your answer.
 
 # Tic-Tac-Toe Sample Data
 
@@ -176,12 +161,41 @@ board7 = [
 ['O','X','','']
 ]
 
+
+# In[19]:
+
+
+def tic_tac_toe(board):
+    '''Tic Tac Toe. 
+    15 points.
+
+    Tic Tac Toe is a common paper-and-pencil game. 
+    Players must attempt to successfully draw a straight line of their symbol across a grid.
+    The player that does this first is considered the winner.
+
+    This function evaluates a tic tac toe board and returns the winner.
+
+    Please see "assignment-4-sample-data.py" for sample data. The board will adhere
+    to the same pattern. The board may by 3x3, 4x4, 5x5, or 6x6. The board will never
+    have more than one winner. The board will only ever have 2 unique symbols at the same time.
+
+    Parameters
+    ----------
+    board: list
+        the representation of the tic-tac-toe board as a square list of lists
+
+    Returns
+    -------
+    str
+        the symbol of the winner or "NO WINNER" if there is no winner
+    '''
+    # Replace `pass` with your code. 
+    # Stay within the function. Only use the parameters as input. The function should return your answer.
+
 # CODE CELL
 #board == list
 #Have to check if there is winner horizontal, vertical, diagonal 
 #for testing purposes: board 1,2,3 = up-down diagonal // board 4 = horizontal row // board 5 = vertical column // board 6 = no winner
-
-def tic_tac_toe (board):
     
     for i in range(0, len(board)):
         horizontal = board[i]
@@ -220,10 +234,50 @@ def tic_tac_toe (board):
         return None
 
     
-tic_tac_toe(board6)
+tic_tac_toe(board1)
 
 
-#ETA
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
+
+# In[70]:
+
+
+#ETA sample data
+route_map = {
+     ("upd","admu"):{
+         "travel_time_mins":10
+     },
+     ("admu","dlsu"):{
+         "travel_time_mins":35
+     },
+     ("dlsu","upd"):{
+         "travel_time_mins":55
+     },
+     ('a1', 'a2'): {
+        'travel_time_mins': 10
+     },
+     ('a2', 'b1'): {
+        'travel_time_mins': 10230
+     },
+     ('b1', 'a1'): {
+        'travel_time_mins': 1
+     }
+}
+
+
+# In[76]:
+
+
 def eta(first_stop, second_stop, route_map):
     '''ETA. 
     20 points.
@@ -255,36 +309,11 @@ def eta(first_stop, second_stop, route_map):
     '''
     # Replace `pass` with your code. 
     # Stay within the function. Only use the parameters as input. The function should return your answer.
-    
-    #Sample Data
-    legs = {
-     ("upd","admu"):{
-         "travel_time_mins":10
-     },
-     ("admu","dlsu"):{
-         "travel_time_mins":35
-     },
-     ("dlsu","upd"):{
-         "travel_time_mins":55
-     }
-}
-
-legs = {
-    ('a1', 'a2'): {
-        'travel_time_mins': 10
-    },
-    ('a2', 'b1'): {
-        'travel_time_mins': 10230
-    },
-    ('b1', 'a1'): {
-        'travel_time_mins': 1
-    }
-}
-
 # CODE CELL
 #legs = dictionary, source = string, destination = string
-def eta (legs, source, destination):    
-    order = [i for i in legs.keys()]
+#legs = route_map, source = first_stop, destination = second_stop
+def eta (route_map, first_stop, second_stop):    
+    order = [i for i in route_map.keys()]
     k = {}
     v = {}
     
@@ -294,26 +323,51 @@ def eta (legs, source, destination):
     end = 0
     last = 0
     
-    for a,b in legs:
+    for a,b in route_map:
         k[a] = b
         v[b] = a
         
-    result = sum([i["travel_time_mins"] for i in legs.values()])
+    result = sum([i["travel_time_mins"] for i in route_map.values()])
     
-    begin = (order.index((source, k[source])))
-    end = order.index((v[destination], destination))
+    begin = (order.index((first_stop, k[first_stop])))
+    end = order.index((v[second_stop], second_stop))
     
-    if(source,k[source]) == (source,destination):
-        return legs[source,destination]["travel_time_mins"]
+    if(first_stop,k[first_stop]) == (first_stop,second_stop):
+        return route_map[first_stop,second_stop]["travel_time_mins"]
     
     else:
         if begin < end:
             for c in range(begin, end+1):
-                last += (legs[order[c]]["travel_time_mins"])
+                last += (route_map[order[c]]["travel_time_mins"])
         elif end < begin:
             for c in range(end + 1, begin):
-                t += (legs[order[c]]["travel_time_mins"])
+                t += (route_map[order[c]]["travel_time_mins"])
                 last = result - t
         return last
             
-eta(legs,"dlsu","admu")
+eta(route_map,"a1","b1")
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
