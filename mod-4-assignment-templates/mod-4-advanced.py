@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+# In[4]:
 
 
 '''Module 4: Individual Programming Assignment 1
@@ -12,7 +12,7 @@ This assignment covers your ability to manipulate data in Python.
 '''
 
 
-# In[4]:
+# In[5]:
 
 
 social_graph = {
@@ -54,7 +54,7 @@ social_graph = {
 }
 
 
-# In[9]:
+# In[6]:
 
 
 def relationship_status(from_member, to_member, social_graph):
@@ -113,7 +113,7 @@ def relationship_status(from_member, to_member, social_graph):
 relationship_status ("@jobenilagan", "@chums", social_graph)
 
 
-# In[11]:
+# In[7]:
 
 
 # Tic-Tac-Toe Sample Data
@@ -162,7 +162,7 @@ board7 = [
 ]
 
 
-# In[19]:
+# In[8]:
 
 
 def tic_tac_toe(board):
@@ -237,19 +237,7 @@ def tic_tac_toe(board):
 tic_tac_toe(board1)
 
 
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[70]:
+# In[9]:
 
 
 #ETA sample data
@@ -275,24 +263,20 @@ route_map = {
 }
 
 
-# In[76]:
+# In[10]:
 
 
 def eta(first_stop, second_stop, route_map):
     '''ETA. 
     20 points.
-
     A shuttle van service is tasked to travel along a predefined circlar route.
     This route is divided into several legs between stops.
     The route is one-way only, and it is fully connected to itself.
-
     This function returns how long it will take the shuttle to arrive at a stop
     after leaving another stop.
-
     Please see the sample data file in this same folder for sample data. The route map will
     adhere to the same pattern. The route map may contain more legs and more stops,
     but it will always be one-way and fully enclosed.
-
     Parameters
     ----------
     first_stop: str
@@ -301,7 +285,6 @@ def eta(first_stop, second_stop, route_map):
         the stop that the shuttle will arrive at
     route_map: dict
         the data describing the routes
-
     Returns
     -------
     int
@@ -309,61 +292,26 @@ def eta(first_stop, second_stop, route_map):
     '''
     # Replace `pass` with your code. 
     # Stay within the function. Only use the parameters as input. The function should return your answer.
-# CODE CELL
-#legs = dictionary, source = string, destination = string
-#legs = route_map, source = first_stop, destination = second_stop
-def eta (route_map, first_stop, second_stop):    
-    order = [i for i in route_map.keys()]
-    k = {}
-    v = {}
+    # CODE CELL
+    #legs = dictionary, source = string, destination = string
+    #legs = route_map, source = first_stop, destination = second_stop
+
+    est_minutes = 0
     
-    
-    t = 0
-    begin = 0
-    end = 0
-    last = 0
-    
-    for a,b in route_map:
-        k[a] = b
-        v[b] = a
-        
-    result = sum([i["travel_time_mins"] for i in route_map.values()])
-    
-    begin = (order.index((first_stop, k[first_stop])))
-    end = order.index((v[second_stop], second_stop))
-    
-    if(first_stop,k[first_stop]) == (first_stop,second_stop):
-        return route_map[first_stop,second_stop]["travel_time_mins"]
-    
-    else:
-        if begin < end:
-            for c in range(begin, end+1):
-                last += (route_map[order[c]]["travel_time_mins"])
-        elif end < begin:
-            for c in range(end + 1, begin):
-                t += (route_map[order[c]]["travel_time_mins"])
-                last = result - t
-        return last
+    while first_stop != second_stop:
+        for i, j in route_map.items():
+            if i[0] == first_stop:
+                est_minutes += j ["travel_time_mins"]
+                first_stop = i [1]
+                break
+            else:
+                pass
             
-eta(route_map,"a1","b1")
+        
+    return est_minutes
+    
 
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
+eta("a1","a2", route_map)
 
 
 # In[ ]:
